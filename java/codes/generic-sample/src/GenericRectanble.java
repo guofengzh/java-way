@@ -10,7 +10,12 @@ public class GenericRectanble<T extends Number> {
 	
 	public T getHeight() { return height ; } 
 	
-	public T area() {
-		return height * width ;
+	public double area() {
+		return height.doubleValue() * width.doubleValue() ;
+	}
+	
+	public static void main(String[] args) {
+		GenericRectanble<Integer> r = new GenericRectanble<>(5, 8) ;
+		System.out.println(r.area());
 	}
 }
