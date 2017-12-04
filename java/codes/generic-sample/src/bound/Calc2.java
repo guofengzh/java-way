@@ -27,7 +27,9 @@ public class Calc2 {
 	    return sum / nums.length;
 	  }
 	  
-	  boolean sameAvg(Calculator<?> ob) {
+	  //<T> boolean sameAvg(Calculator<T> ob) {}
+	  
+	  boolean sameAvg(Calculator<?> ob) { // TODO
 	    if (average() == ob.average())
 	      return true;
 	    return false;

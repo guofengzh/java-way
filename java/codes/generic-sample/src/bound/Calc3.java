@@ -1,6 +1,6 @@
 package bound;
 
-class TwoD {// from ww w . j a va2 s.co m
+class TwoD {
 	int x, y;
 
 	TwoD(int a, int b) {
@@ -33,8 +33,10 @@ public class Calc3 {
 			System.out.println(c.coords[i].x + " " + c.coords[i].y);
 		}
 	}
+	
+	//static <T extends ThreeD> void showXYZ(Map<T> c) {}
 
-	static void showXYZ(Map<? extends ThreeD> c) {
+	static void showXYZ(Map<? extends ThreeD> c) {   // TODO
 		for (int i = 0; i < c.coords.length; i++) {
 			System.out.println(c.coords[i].x + " " + c.coords[i].y + " " + c.coords[i].z);
 		}

@@ -1,4 +1,5 @@
 import static java.lang.System.out ;
+
 public class GenricMethod {
 	public static void main(String[] args) {
 		out.println(output(5, 5)) ;
