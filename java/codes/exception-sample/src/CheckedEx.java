@@ -13,6 +13,8 @@ public class CheckedEx {
 		} catch (MyException e) {
 			e.printStackTrace();
 		}
+		System.out.println("Dump") ;
+		Thread.dumpStack();
 	}
 	
 	public static void method() throws MyException {
