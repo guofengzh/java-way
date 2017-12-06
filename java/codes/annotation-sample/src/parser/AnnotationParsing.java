@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 public class AnnotationParsing {
 
 	public static void main(String[] args) {
-		for (Method method : AnnotationExample2.class.getMethods()) {
+		for (Method method : AnnotationExample.class.getMethods()) {
 			// checks if MethodInfo annotation is present for the method
 			if (method.isAnnotationPresent(MethodInfo.class)) {
 				try {

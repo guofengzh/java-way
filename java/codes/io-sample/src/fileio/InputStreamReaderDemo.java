@@ -17,6 +17,7 @@ public class InputStreamReaderDemo {
 				data = inputStreamReader.read();
 			}
 		}
+		
 	}
 
 	private static void doSomethingWithData(int data) {
