@@ -1,4 +1,5 @@
-package syn;
+package race.syn;
+
 public class Account
 {
 	private String accountNo;

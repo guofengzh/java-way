@@ -1,4 +1,4 @@
-package lock;
+package race.lock;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

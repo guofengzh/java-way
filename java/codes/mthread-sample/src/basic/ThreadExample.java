@@ -1,3 +1,4 @@
+package basic;
 class Counter {
 
 	long count = 0;
