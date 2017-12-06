@@ -1,3 +1,4 @@
+package syn;
 public class Account
 {
 	private String accountNo;
@@ -41,14 +42,14 @@ public class Account
 			public void run() {
 				acct.withdraw(80);
 			}
-		}, "PepoleA").start();
+		}).start();
 		
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
 				acct.deposit(80);
 			}
-		}, "PepoleB").start();
+		}).start();
 	}
 	
 }
