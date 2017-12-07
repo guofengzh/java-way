@@ -1,4 +1,4 @@
-package org.example.webapp;
+package avic.training.template;
 
 import java.io.IOException;
 

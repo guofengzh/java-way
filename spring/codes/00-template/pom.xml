@@ -3,7 +3,7 @@
     
     <modelVersion>4.0.0</modelVersion>
     <groupId>avic-training</groupId>
-    <artifactId>webapp</artifactId>
+    <artifactId>training-template</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
