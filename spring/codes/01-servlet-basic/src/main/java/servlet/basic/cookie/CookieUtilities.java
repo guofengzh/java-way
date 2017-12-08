@@ -1,4 +1,4 @@
-package avic.servlet.basic.cookie;
+package servlet.basic.cookie;
 
 import javax.servlet.http.*;
 

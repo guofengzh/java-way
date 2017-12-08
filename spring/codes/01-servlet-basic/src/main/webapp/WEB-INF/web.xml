@@ -8,12 +8,12 @@
 	<display-name>Servlet Basics</display-name>
 	<!--servlet>
 		<servlet-name>make-list</servlet-name>
-		<servlet-class>avic.servlet.basic.MakeList</servlet-class>
+		<servlet-class>servlet.basic.MakeList</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet>
 		<servlet-name>make-table</servlet-name>
-		<servlet-class>avic.servlet.basic.MakeTable</servlet-class>
+		<servlet-class>servlet.basic.MakeTable</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	

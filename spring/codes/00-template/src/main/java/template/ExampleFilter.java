@@ -1,4 +1,4 @@
-package avic.training.template;
+package template;
 
 import java.io.IOException;
 

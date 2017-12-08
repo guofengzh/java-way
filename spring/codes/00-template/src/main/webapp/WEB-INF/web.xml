@@ -8,7 +8,7 @@
 	<display-name>Simple Servlet Application</display-name>
 	<servlet>
 		<servlet-name>example-servlet</servlet-name>
-		<servlet-class>avic.training.template.ExampleServlet</servlet-class>
+		<servlet-class>template.ExampleServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	

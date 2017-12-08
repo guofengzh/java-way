@@ -1,4 +1,4 @@
-package avic.servlet.basic.header;
+package servlet.basic.header;
 
 import java.io.*;
 import javax.servlet.*;
