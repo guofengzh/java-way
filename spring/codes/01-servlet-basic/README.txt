@@ -13,9 +13,9 @@ http://localhost:8080/avic-training/browser-insult        (Check browser)
 http://localhost:8080/avic-training/show-request-headers  (list all request headers)
 
 Cookies
-http://localhost:8080/avic-training/cookie/registration-form.html
+http://localhost:8080/avic-training/cookie/registration-form.html Click Back, then retry
 
 Session
-http://localhost:8080/avic-training/sessio/registration-form.html
+http://localhost:8080/avic-training/session/registration-form.html Click Back, then retry
 
 
