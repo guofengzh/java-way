@@ -32,7 +32,7 @@
                     </container>
                     <configuration>
                         <!--type>existing</type-->
-                        <home>target/tomcat7x</home>
+                        <home>${basedir}/target/tomcat7x</home>
                        <properties>
                           <cargo.rmi.port>1099</cargo.rmi.port>
                           <cargo.servlet.port>8080</cargo.servlet.port>
