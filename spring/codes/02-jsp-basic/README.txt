@@ -1,7 +1,7 @@
 mvn clean package cargo:run
 
 Basic
-http://localhost:8080/avic-training/baic.jsp
+http://localhost:8080/avic-training/basic.jsp
 
 Scripting
 http://localhost:8080/avic-training/scripting/DayWish.jsp
