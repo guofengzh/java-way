@@ -5,8 +5,8 @@ import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 
-@WebServlet("/param/register")
-public class Registration extends HttpServlet {
+@WebServlet("/param/register-post")
+public class RegistrationPOST extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request,
                     HttpServletResponse response)
@@ -38,6 +38,15 @@ public class Registration extends HttpServlet {
                 "</UL>\n" +
                 "</BODY></HTML>");
   }
+  
+  // Method to handle POST method request.
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response)
+     throws ServletException, IOException {
+     
+     doGet(request, response);
+  }
+  
 
   /** Returns error message if value is missing or is empty string. */
   
