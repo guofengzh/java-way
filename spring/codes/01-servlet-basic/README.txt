@@ -1,5 +1,7 @@
 mvn clean package cargo:run
 
+http://localhost:8080/avic-training
+
 Basic
 http://localhost:8080/avic-training/list
 http://localhost:8080/avic-training/table
