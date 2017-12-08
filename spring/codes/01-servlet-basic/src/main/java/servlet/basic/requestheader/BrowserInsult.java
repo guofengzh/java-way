@@ -1,4 +1,4 @@
-package servlet.basic.header;
+package servlet.basic.requestheader;
 
 import java.io.*;
 import javax.servlet.*;
