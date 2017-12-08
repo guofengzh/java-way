@@ -8,7 +8,7 @@ http://localhost:8080/avic-training/scripting/DayWish.jsp
 http://localhost:8080/avic-training/scripting/RandomList.jsp
 
 Page Directive
-http://localhost:8080/avic-training/directive/SquareNum.jsp
+http://localhost:8080/avic-training/directive/SquareNum.jsp?baseNum=25
 
 Inclusion
 http://localhost:8080/avic-training/inclusion/WhatsNew.jsp
