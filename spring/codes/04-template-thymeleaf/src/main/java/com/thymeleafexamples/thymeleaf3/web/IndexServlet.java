@@ -2,6 +2,8 @@ package com.thymeleafexamples.thymeleaf3.web;
 
 import com.thymeleafexamples.thymeleaf3.config.TemplateEngineUtil;
 import java.io.IOException;
+import java.util.Date;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +19,7 @@ public class IndexServlet extends HttpServlet {
         TemplateEngine engine = TemplateEngineUtil.getTemplateEngine(request.getServletContext());
         WebContext context = new WebContext(request, response, request.getServletContext());
         context.setVariable("recipient", "World");
+        context.setVariable("currentDate", new Date());
         engine.process("index.html", context, response.getWriter());
     }
 
