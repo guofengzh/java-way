@@ -25,7 +25,12 @@ public class RedirectServlet extends HttpServlet {
 			// How we pass data to the target servlet
 			HttpSession session = request.getSession() ;
 		    session.setAttribute("whatIguess", majorin);
+		    // The following redirect use status 302 (SC_MOVED_PERMANENTLY) for redirect, 
+		    // there is also 301 (SC_MOVED_PERMANENTLY)
 			response.sendRedirect(this.getServletContext().getContextPath()+"/redirect/guessed");
+			// and the new 307 (TEMPORARY_REDIRECT) 
+			//response.setStatus(307); //this makes the redirection keep your requesting method as is.
+			//response.addHeader("Location", this.getServletContext().getContextPath()+"/redirect/guessed");
 			return ;
 			
 		} else {
