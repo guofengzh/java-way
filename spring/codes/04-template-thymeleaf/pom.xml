@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>avic-training</groupId>
+    <artifactId>template-thymeleaf</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <build>
+        <finalName>template-thymeleaf</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.cargo</groupId>
+                <artifactId>cargo-maven2-plugin</artifactId>
+                <version>1.6.5</version>
+                <configuration>
+                     <!-- Container configuration -->
+                    <container>
+                        <containerId>tomcat7x</containerId>
+                        <home>C:/apache-tomcat-7.0.82</home>
+                        <timeout>900000</timeout> <!-- 5 minutes -->
+                    </container>
+                    <configuration>
+                        <!--type>existing</type-->
+                        <home>${basedir}/target/tomcat7x</home>
+                       <properties>
+                          <cargo.rmi.port>1099</cargo.rmi.port>
+                          <cargo.servlet.port>8080</cargo.servlet.port>
+                          <cargo.jvmargs>-server -Xms1024m -Xmx2048m -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=9999</cargo.jvmargs> 
+                       </properties>
+                    </configuration>
+                    <deployer>
+                        <type>installed</type>
+                    </deployer>
+                   <deployables>
+                       <deployable>
+                            <properties>
+                                <context>avic-training</context>
+                            </properties>
+                        </deployable>
+                    </deployables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency> 
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+            <version>3.0.9.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+          <version>1.2.17</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
