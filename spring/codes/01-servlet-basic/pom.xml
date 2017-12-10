@@ -3,12 +3,12 @@
     
     <modelVersion>4.0.0</modelVersion>
     <groupId>avic-training</groupId>
-    <artifactId>servlet-basic</artifactId>
+    <artifactId>01-servlet-basic</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <build>
-        <finalName>servlet-basic</finalName>
+        <finalName>01-servlet-basic</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

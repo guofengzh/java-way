@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>avic-training</groupId>
+	<artifactId>springmvc</artifactId>
+	<packaging>war</packaging>
+	<version>1.0.0</version>
+	<name>springmvc</name>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<springframework.version>4.3.13.RELEASE</springframework.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>springmvc</finalName>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>3.2.0</version>
+					<configuration>
+						<warSourceDirectory>src/main/webapp</warSourceDirectory>
+						<warName>springmvc</warName>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+        <plugins>
+           <plugin>
+               <artifactId>maven-compiler-plugin</artifactId>
+               <configuration>
+                   <source>1.8</source>
+                   <target>1.8</target>
+               </configuration>
+            </plugin>        
+            <plugin>
+                <groupId>org.codehaus.cargo</groupId>
+                <artifactId>cargo-maven2-plugin</artifactId>
+                <version>1.6.5</version>
+                <configuration>
+                     <!-- Container configuration -->
+                    <container>
+                        <containerId>tomcat7x</containerId>
+                        <home>C:/apache-tomcat-7.0.82</home>
+                        <timeout>900000</timeout> <!-- 5 minutes -->
+                    </container>
+                    <configuration>
+                        <!--type>existing</type-->
+                        <home>${basedir}/target/tomcat7x</home>
+                       <properties>
+                          <cargo.rmi.port>1099</cargo.rmi.port>
+                          <cargo.servlet.port>8080</cargo.servlet.port>
+                          <cargo.jvmargs>-server -Xms1024m -Xmx2048m -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=9999</cargo.jvmargs> 
+                       </properties>
+                    </configuration>
+                    <deployer>
+                        <type>installed</type>
+                    </deployer>
+                   <deployables>
+                       <deployable>
+                            <properties>
+                                <context>avic-training</context>
+                            </properties>
+                        </deployable>
+                    </deployables>
+                </configuration>
+            </plugin>
+        </plugins>
+	</build>
+</project>
+
