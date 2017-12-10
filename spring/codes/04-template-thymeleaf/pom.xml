@@ -3,12 +3,12 @@
     
     <modelVersion>4.0.0</modelVersion>
     <groupId>avic-training</groupId>
-    <artifactId>template-thymeleaf</artifactId>
+    <artifactId>04-template-thymeleaf</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <build>
-        <finalName>template-thymeleaf</finalName>
+        <finalName>04-template-thymeleaf</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
