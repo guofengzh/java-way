@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.avicit.mybatis.tutorial</groupId>
+    <groupId>avic-training</groupId>
     <artifactId>myproj-subs-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -26,7 +26,7 @@
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.0</version>
+            <version>3.7.0</version>
             <configuration>
                 <optimize>true</optimize>
                 <source>${target.jdk}</source>
