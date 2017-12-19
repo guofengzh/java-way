@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @WebServlet(name = "cities", urlPatterns = {"/cities"})
-public class CitiesServlet extends HttpServlet {
+public class CityServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
