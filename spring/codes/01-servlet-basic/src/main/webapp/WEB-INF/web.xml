@@ -7,6 +7,19 @@
 
     <display-name>Servlet Basics</display-name>
 
+    <context-param>
+	    <param-name>url</param-name>
+	    <param-value>jdbc:mysql://localhost:3306/mysql</param-value>
+    </context-param>
+    <context-param>
+	    <param-name>user</param-name>
+	    <param-value>root</param-value>
+    </context-param>
+    <context-param>
+	    <param-name>pwd</param-name>
+	    <param-value>111111</param-value>
+    </context-param>
+
     <filter>   
         <filter-name>log-filter</filter-name>   
         <filter-class>servlet.basic.filter.LogFilter</filter-class>   
