@@ -5,7 +5,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>avic-training</groupId>
-	<artifactId>05-springmvc</artifactId>
+	<artifactId>06-springmvc</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0</version>
 	<name>springmvc</name>
@@ -41,7 +41,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>05-springmvc</finalName>
+		<finalName>06-springmvc</finalName>
 		<pluginManagement>
 			<plugins>
 				<plugin>
