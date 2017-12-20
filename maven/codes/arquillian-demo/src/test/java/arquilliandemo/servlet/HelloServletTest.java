@@ -30,7 +30,6 @@ public class HelloServletTest {
 	public static Archive<?> createTestArchiveAllFiles() {
 		MavenResolverSystem resolver = Maven.resolver();  
 		resolver.loadPomFromFile("pom.xml");  
-		new RejectDependenciesStrategy() ;
         JavaArchive[] archives = resolver.resolve().using(new RejectDependenciesStrategy()).as(JavaArchive.class);  
 		File[] webinfs = new File("src/main/webapp/WEB-INF").listFiles();
 		WebArchive wa = ShrinkWrap.create(WebArchive.class, "test.war")
