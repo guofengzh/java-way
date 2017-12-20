@@ -5,14 +5,15 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>avic-training</groupId>
-	<artifactId>05-spring</artifactId>
+	<artifactId>05-spring-bean</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0.0</version>
-	<name>spring</name>
+	<name>05-spring-bean</name>
 
 	<properties>
 		<java.version>1.8</java.version>
 		<springframework.version>4.3.13.RELEASE</springframework.version>
+		<aspectj.version>1.8.13</aspectj.version>
 	</properties>
 
 	<dependencies>
@@ -24,7 +25,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>05-spring</finalName>
+		<finalName>05-spring-bean</finalName>
         <plugins>
            <plugin>
                <artifactId>maven-compiler-plugin</artifactId>

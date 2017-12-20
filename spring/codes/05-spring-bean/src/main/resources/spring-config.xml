@@ -21,9 +21,9 @@
     <bean id="calendar" class="java.util.Calendar" factory-method="getInstance"/>
     
     <bean name="employee1" class="spring.bean.Employee">
-        <property name="homeAddress" ref="simpleAddress"/>
         <property name="firstName" value="Junior"/>
         <property name="lastName" value="Moore"/>
+        <property name="homeAddress" ref="simpleAddress"/>
     </bean>
 
     <bean name="employee2" class="spring.bean.Employee">
