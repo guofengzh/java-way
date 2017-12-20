@@ -1,44 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx" 
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
-       
-    <bean name="product" class="spring.bean.Product"/>
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <bean name="featuredProduct" class="spring.bean.Product">
-		<constructor-arg name="name" value="Ultimate Olive Oil"/>
-        <constructor-arg name="description" value="The purest olive oil on the market"/>
-		<constructor-arg name="price" value="9.95"/>
-    </bean>
-    
-    <bean name="featuredProduct2" class="spring.bean.Product">
-        <constructor-arg index="0" value="Ultimate Olive Oil"/>
-        <constructor-arg index="1" value="The purest olive oil on the market"/>
-        <constructor-arg index="2" value="9.95"/>
-    </bean>
+	<!-- Enable Annotation based Declarative Transaction Management -->
+	<tx:annotation-driven proxy-target-class="true" transaction-manager="transactionManager" />
 
-    <bean id="calendar" class="java.util.Calendar" factory-method="getInstance"/>
-    
-    <bean name="employee1" class="spring.bean.Employee">
-        <property name="firstName" value="Junior"/>
-        <property name="lastName" value="Moore"/>
-        <property name="homeAddress" ref="simpleAddress"/>
-    </bean>
+	<!-- Creating TransactionManager Bean, since JDBC we are creating of type DataSourceTransactionManager -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- MySQL DB DataSource -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 
-    <bean name="employee2" class="spring.bean.Employee">
-        <constructor-arg name="firstName" value="Senior"/>
-        <constructor-arg name="lastName" value="Moore"/>
-        <constructor-arg name="homeAddress" ref="simpleAddress"/>
-    </bean>
-    
-    <bean name="simpleAddress" class="spring.bean.Address">
-        <constructor-arg name="line1" value="151 Corner Street"/>
-        <constructor-arg name="line2" value=""/>
-        <constructor-arg name="city" value="Albany"/>
-        <constructor-arg name="state" value="NY"/>
-        <constructor-arg name="zipCode" value="99999"/>
-        <constructor-arg name="country" value="US"/>
-    </bean>
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/mysql" />
+		<property name="username" value="root" />
+		<property name="password" value="111111" />
+	</bean>
 
+	<bean id="customerDAO" class="spring.tx.dao.CustomerDAOImpl">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<bean id="customerManager" class="spring.tx.service.CustomerManagerImpl">
+		<property name="customerDAO" ref="customerDAO"></property>
+	</bean>
+	       
 </beans>
