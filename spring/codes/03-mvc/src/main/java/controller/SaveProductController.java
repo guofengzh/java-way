@@ -10,10 +10,9 @@ import form.ProductForm;
 import service.ProductService;
 import validator.ProductValidator;
 
-public class SaveProductController implements Controller {
+public class SaveProductController {
 	 private ProductService productService = ProductService.getService() ;
 	 
-    @Override
     public String handleRequest(HttpServletRequest request,
             HttpServletResponse response) {
         ProductForm productForm = new ProductForm();
