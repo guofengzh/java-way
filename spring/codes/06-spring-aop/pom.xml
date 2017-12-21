@@ -5,10 +5,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>avic-training</groupId>
-	<artifactId>05-spring-aop</artifactId>
+	<artifactId>06-spring-aop</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0.0</version>
-	<name>05-spring-aop</name>
+	<name>06-spring-aop</name>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -45,7 +45,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>05-spring-aop</finalName>
+		<finalName>06-spring-aop</finalName>
         <plugins>
            <plugin>
                <artifactId>maven-compiler-plugin</artifactId>
