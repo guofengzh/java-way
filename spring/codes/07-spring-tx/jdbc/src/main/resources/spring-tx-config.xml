@@ -18,11 +18,10 @@
 	<!-- MySQL DB DataSource -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-
-		<property name="driverClassName" value="org.apache.derby.jdbc.EmbeddedDriver" />
-		<property name="url" value="jdbc:derby:ibderby;create=true" />
-		<property name="username" value="" />
-		<property name="password" value="" />
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/mysql" />
+		<property name="username" value="root" />
+		<property name="password" value="111111" />
 	</bean>
 
 	<bean id="customerDAO" class="spring.tx.dao.CustomerDAOImpl">

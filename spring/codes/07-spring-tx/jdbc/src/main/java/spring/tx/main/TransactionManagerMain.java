@@ -25,8 +25,9 @@ public class TransactionManagerMain {
 
 		Customer cust = createDummyCustomer();
 		try {
-		customerManager.createCustomer(cust);
+		   customerManager.createCustomer(cust);
 		} catch (Exception e) {
+			// 异常，事物被回滚，所以数据库中没有数据
 			System.out.println(e.getMessage());
 		}
 		
@@ -43,7 +44,7 @@ public class TransactionManagerMain {
 		Address address = new Address();
 		address.setId(2);
 		address.setCountry("India");
-		// setting value more than 20 chars, so that SQLException occurs
+		// 设置成多于20个字符，所以，会产生SQLException，演示事务回滚
 		address.setAddress("Albany Dr, San Jose, CA 95129");
 		customer.setAddress(address);
 		return customer;
