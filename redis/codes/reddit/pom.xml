@@ -3,23 +3,17 @@
 
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.nicmarti.redis</groupId>
-    <artifactId>redis-sample</artifactId>
+    <groupId>avic-training</groupId>
+    <artifactId>reddit-project</artifactId>
     <packaging>jar</packaging>
     <version>1.0</version>
-    <name>Redis samples in Java</name>
-
-
-    <prerequisites>
-      <maven>3.0.4</maven>
-  </prerequisites>
 
     <dependencies>
         <dependency>
             <!-- home page https://github.com/xetorthio/jedis -->
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
-            <version>2.1.0</version>
+            <version>2.9.0</version>
             <type>jar</type>
             <scope>compile</scope>
         </dependency>

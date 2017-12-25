@@ -3,13 +3,13 @@ import redis.clients.jedis.ZParams;
 
 import java.util.*;
 
-public class Chapter01 {
+public class Reddit {
     private static final int ONE_WEEK_IN_SECONDS = 7 * 86400;
     private static final int VOTE_SCORE = 432;
     private static final int ARTICLES_PER_PAGE = 25;
 
     public static final void main(String[] args) {
-        new Chapter01().run();
+        new Reddit().run();
     }
 
     public void run() {
@@ -44,6 +44,15 @@ public class Chapter01 {
         assert articles.size() >= 1;
     }
 
+    /**
+     * 发表并获取文章
+     * 
+     * @param conn
+     * @param user
+     * @param title
+     * @param link
+     * @return
+     */
     public String postArticle(Jedis conn, String user, String title, String link) {
         String articleId = String.valueOf(conn.incr("article:"));
 
@@ -66,6 +75,13 @@ public class Chapter01 {
         return articleId;
     }
 
+    /**
+     * 用户对文章进行投票
+     * 
+     * @param conn
+     * @param user
+     * @param article
+     */
     public void articleVote(Jedis conn, String user, String article) {
         long cutoff = (System.currentTimeMillis() / 1000) - ONE_WEEK_IN_SECONDS;
         if (conn.zscore("time:", article) < cutoff){
@@ -99,6 +115,13 @@ public class Chapter01 {
         return articles;
     }
 
+    /**
+     * 对文章进行分组
+     * 
+     * @param conn
+     * @param articleId
+     * @param toAdd
+     */
     public void addGroups(Jedis conn, String articleId, String[] toAdd) {
         String article = "article:" + articleId;
         for (String group : toAdd) {
