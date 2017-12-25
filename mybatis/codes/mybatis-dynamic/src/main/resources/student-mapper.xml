@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.avicit.tutorial.mybatis.student.mapper.StudentMapper">
+
+	<cache />
+
+	<resultMap id="result" type="Student">
+		<result property="id" column="ID" />
+		<result property="name" column="NAME" />
+		<result property="branch" column="BRANCH" />
+		<result property="percentage" column="PERCENTAGE" />
+		<result property="phone" column="PHONE" />
+		<result property="email" column="EMAIL" />
+	</resultMap>
+
+	<select id="getRecByName" parameterType="Student" resultType="Student">
+
+		SELECT * FROM STUDENT
+		<if test="name != null">
+			WHERE name LIKE #{name}
+		</if>
+	</select>
+
+	<select id="getRecByName_Id" parameterType="Student" resultType="Student">
+
+		SELECT * FROM STUDENT
+		<if test="name != null">
+			WHERE name LIKE #{name}
+		</if>
+
+		<if test="id != null">
+			AND id LIKE #{id}
+		</if>
+	</select>
+
+	<select id="getRecByName_Id_phone" parameterType="Student"
+		resultType="Student">
+		SELECT * FROM Student WHERE id != 0
+
+		<choose>
+			<when test="name != null">
+				AND name LIKE #{name}
+			</when>
+
+			<when test="phone != null">
+				AND phone LIKE #{phone}
+			</when>
+		</choose>
+
+	</select>
+
+	<select id="getName_Id_phone" parameterType="Student"
+		resultType="Student">
+		SELECT * FROM STUDENT
+
+		<where>
+			<if test="id != null">
+				id = #{id}
+			</if>
+
+			<if test="name != null">
+				AND name LIKE #{name}
+			</if>
+		</where>
+
+	</select>
+
+	<insert id="createTable" parameterType="String">
+		CREATE TABLE STUDENT(
+		`id` bigint(32) NOT NULL AUTO_INCREMENT,
+		NAME varchar(100) NOT NULL,
+		BRANCH varchar(255) NOT NULL,
+		PERCENTAGE int NOT NULL,
+		PHONE int NOT NULL,
+		EMAIL varchar(255) NOT NULL,
+		PRIMARY KEY ( ID )
+		)
+	</insert>
+	<insert id="dropTable" parameterType="String">
+		DROP TABLE STUDENT
+	</insert>
+
+
+</mapper>
