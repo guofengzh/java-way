@@ -12,10 +12,10 @@
             <transactionManager type = "JDBC"/>
 
             <dataSource type = "POOLED">
-                <property name = "driver" value = "org.apache.derby.jdbc.EmbeddedDriver"/>
-                <property name = "url" value = "jdbc:derby:ibderby;create=true"/>
-                <property name = "username" value = ""/>
-                <property name = "password" value = ""/>
+                <property name = "driver" value = "com.mysql.jdbc.Driver"/>
+                <property name = "url" value = "jdbc:mysql://localhost:3306/mysql?useUnicode=true&amp;characterEncoding=utf8"/>
+                <property name = "username" value = "root"/>
+                <property name = "password" value = "111111"/>
             </dataSource>
 
         </environment>

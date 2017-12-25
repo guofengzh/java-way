@@ -50,6 +50,7 @@
         PRIMARY KEY ( ID )
         )
     </insert>
+    
     <insert id="dropTable" parameterType="String" >
         DROP TABLE STUDENT
     </insert>
