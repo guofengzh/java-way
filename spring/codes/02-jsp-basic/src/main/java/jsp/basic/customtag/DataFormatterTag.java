@@ -18,6 +18,7 @@ public class DataFormatterTag extends SimpleTagSupport {
         this.items = items;
     }
 
+    @Override
     public void doTag() throws IOException, JspException {
         JspContext jspContext = getJspContext();
         JspWriter out = jspContext.getOut();
