@@ -53,7 +53,7 @@ public class HelloWorldRestController {
 	
 	//-------------------Create a User--------------------------------------------------------
 	
-	@RequestMapping(value = "/users/", method = RequestMethod.POST)
+	@RequestMapping(value = "/users", method = RequestMethod.POST)
 	public ResponseEntity<Void> createUser(@RequestBody User user, 	UriComponentsBuilder ucBuilder) {
 		System.out.println("Creating User " + user.getName());
 

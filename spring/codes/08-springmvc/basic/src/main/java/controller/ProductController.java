@@ -28,7 +28,7 @@ public class ProductController {
         return "ProductForm";
     }
 
-    @RequestMapping(value = "/product_save2", method = RequestMethod.POST)
+    @RequestMapping(value = "/product_save", method = RequestMethod.POST)
     public String saveProduct(ProductForm productForm) {
         logger.info("saveProduct called");
         // no need to create and instantiate a ProductForm
